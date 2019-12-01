@@ -64939,6 +64939,7 @@
 	  },
 	  onDragStart: function (e) {
 	    var target = $(e.target).closest('.w-req-data-item');
+	    console.log('TCL: getUploadSessionsFn -> target', target);
 	    e.dataTransfer.setData('reqDataId', target.attr('data-id'));
 	  },
 	  onClick: function (e, item, hm) {
@@ -65473,14 +65474,14 @@
 	          'div',
 	          { ref: 'container', tabIndex: '0', onContextMenu: self.onContextMenu,
 	            style: { background: dataCenter.hashFilterObj || filterText ? 'lightyellow' : undefined },
-	            className: 'w-req-data-list fill' },
+	            className: 'w-req-data-list fill', onDragStart: this.onDragStart },
 	          React.createElement(
 	            RV.AutoSizer,
 	            { ref: 'content' },
 	            function (size) {
 	              return React.createElement(
 	                'table',
-	                { className: 'table', onDragStart: this.onDragStart },
+	                { className: 'table' },
 	                React.createElement(
 	                  'tbody',
 	                  null,
