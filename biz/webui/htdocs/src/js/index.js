@@ -238,7 +238,7 @@ var Index = React.createClass({
       state.hasNetwork = true;
       state.name = 'network';
     }
-    
+
     var rulesList = [];
     var rulesOptions = [];
     var rulesData = {};
@@ -1161,7 +1161,9 @@ var Index = React.createClass({
           }, 1000);
         }
       });
-    var body = con.children('table')[0];
+    var body = con.children()[0].children[0];
+    // var body = con.find('.ReactVirtualized__Grid')[0];
+
     var timeout;
     con = con[0];
     dataCenter.on('data', update);
@@ -2363,7 +2365,7 @@ var Index = React.createClass({
   disableAllRules: function(e) {
     var checked = e.target.checked;
     var self = this;
-    
+
     dataCenter.rules.disableAllRules({disabledAllRules: checked ? 1 : 0}, function(data, xhr) {
       if (data && data.ec === 0) {
         var state = self.state;

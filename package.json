@@ -55,6 +55,7 @@
     "pfork": "^0.3.6",
     "pipestream": "^0.6.5",
     "q": "1.4.1",
+    "react-virtualized": "^9.21.2",
     "safe-buffer": "^5.1.2",
     "sni": "1.0.0",
     "sockx": "^0.1.3",
