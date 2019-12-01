@@ -1171,8 +1171,8 @@
 	        }, 1000);
 	      }
 	    });
-	    var body = con.children()[0].children[0];
-	    // var body = con.find('.ReactVirtualized__Grid')[0];
+	    // var body = con.children()[0].children[0];
+	    var body = con.find('.ReactVirtualized__Grid')[0];
 
 	    var timeout;
 	    con = con[0];
@@ -64899,8 +64899,10 @@
 	    self.container = ReactDOM.findDOMNode(self.refs.container);
 	    self.content = ReactDOM.findDOMNode(self.refs.content);
 	    self.$content = $(self.content).on('dblclick', 'tr', function () {
+	      console.log('yyy');
 	      events.trigger('showOverview');
 	    }).on('click', 'tr', function (e) {
+	      console.log('xxx');
 	      var modal = self.props.modal;
 	      var item = modal.getItem(this.getAttribute('data-id'));
 	      self.onClick(e, item);
@@ -65474,11 +65476,11 @@
 	            className: 'w-req-data-list fill' },
 	          React.createElement(
 	            RV.AutoSizer,
-	            null,
+	            { ref: 'content' },
 	            function (size) {
 	              return React.createElement(
 	                'table',
-	                { ref: 'content', className: 'table', onDragStart: this.onDragStart },
+	                { className: 'table', onDragStart: this.onDragStart },
 	                React.createElement(
 	                  'tbody',
 	                  null,

@@ -289,8 +289,10 @@ var ReqData = React.createClass({
     self.container = ReactDOM.findDOMNode(self.refs.container);
     self.content = ReactDOM.findDOMNode(self.refs.content);
     self.$content = $(self.content).on('dblclick', 'tr', function() {
+      console.log('yyy');
       events.trigger('showOverview');
     }).on('click', 'tr', function(e) {
+      console.log('xxx');
       var modal = self.props.modal;
       var item = modal.getItem(this.getAttribute('data-id'));
       self.onClick(e, item);
@@ -847,8 +849,8 @@ var ReqData = React.createClass({
             <div ref="container" tabIndex="0" onContextMenu={self.onContextMenu}
               style={{background: (dataCenter.hashFilterObj || filterText) ? 'lightyellow' : undefined}}
               className="w-req-data-list fill">
-                <RV.AutoSizer >{function(size){
-                  return (<table ref="content" className="table" onDragStart={this.onDragStart}>
+                <RV.AutoSizer ref="content" >{function(size){
+                  return (<table  className="table" onDragStart={this.onDragStart}>
                     <tbody>
                       <RV.List
                       rowHeight={30}

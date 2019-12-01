@@ -1161,8 +1161,8 @@ var Index = React.createClass({
           }, 1000);
         }
       });
-    var body = con.children()[0].children[0];
-    // var body = con.find('.ReactVirtualized__Grid')[0];
+    // var body = con.children()[0].children[0];
+    var body = con.find('.ReactVirtualized__Grid')[0];
 
     var timeout;
     con = con[0];
